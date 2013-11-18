@@ -1,0 +1,72 @@
+/* Sticky footer styles -------------------------------------------------- */
+body {background-attachment:fixed;}
+
+html,body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -80px;
+}
+
+/* Set the fixed height of the footer here */
+#push {
+  height: 60px;
+}
+#footer {
+  height: 40px;
+}
+/* end sticky footer --------------*/
+
+.section p {
+  padding-left: 10px;
+}
+.section-wrap {
+  min-height: 100px;
+/*   border-top: 0px; */
+  border: 1px solid #ddd; /* ddd or 222 */
+  padding: 10px;
+}
+.section-header > * {
+  float: left;
+}
+.section-toggle {
+  margin-top: 17px;
+  margin-left: 20px;
+}
+.error-field {
+  padding-bottom: 5px;
+  margin-left: 80px;
+  display: none;
+}
+.thankyou {
+  display: none;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  background-color: #D7FFFF;
+  border-radius: 5px;
+}
+#endnote {
+  text-align: center;
+  margin-top: -1px;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+#tabs {
+  margin-bottom: -1px;
+}
+#main-content {
+  width: 100%;
+}
+hr {
+  margin: 0px;
+  border-top-color: #ddd;
+}
+h3 { font-size:18px; }
