@@ -4,18 +4,28 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     watch: {
-      files: ['templates/homepage/handlebars/*.html'],
-      tasks: ['template']
+      handlebars: {
+        files: ['templates/homepage/handlebars/html/*.html'],
+        tasks: ['template']
+      }
     },
 
-    template: 
-      console.log('hello?')
-    
+    handlebars: {
+      compile: {
+        options: {
+          namespace: 'homepage.templates'
+        },
+        files: {
+          "templates/homepage/handlebars/js/test.js": "templates/homepage/handlebars/html/test.html",
+        }
+      }
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
 
   grunt.registerTask('default', ['watch']);
+  grunt.registerTask('template', ['handlebars']);
 
 };
