@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 
     watch: {
       handlebars: {
-        files: ['templates/homepage/handlebars/html/*.html'],
+        files: ['static/templates/homepage/handlebars/html/*.html'],
         tasks: ['template']
       }
     },
@@ -13,10 +13,16 @@ module.exports = function(grunt) {
     handlebars: {
       compile: {
         options: {
-          namespace: 'homepage.templates'
+          namespace: 'Handlebars.templates',
+          processName: function(filePath) {
+            name = filePath.split('/');
+            name = name[name.length-1];
+            name = name.split('.')[0]
+            return name;
+          }
         },
         files: {
-          "templates/homepage/handlebars/js/test.js": "templates/homepage/handlebars/html/test.html",
+          "static/js/homepage/handlebars/message-row-default.js": "static/templates/homepage/handlebars/html/message-row-default.html",
         }
       }
     }

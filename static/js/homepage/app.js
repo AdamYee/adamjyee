@@ -41,12 +41,12 @@ var MessageRowView = Backbone.View.extend({
 
 	className: 'message-row',
 
-	template_default: ['<div class="edit-container"><button type="button" class="edit-btn btn btn-small btn-primary">edit</button></div>',
+	message_row_default: ['<div class="edit-container"><button type="button" class="edit-btn btn btn-small btn-primary">edit</button></div>',
 						'<div><%= message %><a href="" class="delete">[x]</a></div>',
 						'<hr />'
 						].join(''),
 
-	template_edit: ['<form class="edit-form">',
+	message_row_edit: ['<form class="edit-form">',
 					'<input class="edit" id="message<%= id %>" type="text" value="<%= message %>" />',
 					'<hr style="margin-top:5px;"/>',
 					'</form>',
@@ -61,16 +61,17 @@ var MessageRowView = Backbone.View.extend({
 	
 	initialize: function() {
 		console.log('MessageView initialized');
-		this.template = this.template_default;
+		console.log(Handlebars.templates);
+		this.row_template = this.message_row_default;
 		this.editting = false;
 		
 		this.model.on('change:message', this.afterEditRender, this);
 	},
 			
 	render: function() {
-		var t = _.template(this.template);
+		var t = _.template(this.row_template);
 		this.$el.html( t(this.model.toJSON()) );
-		if (this.template == this.template_edit) {
+		if (this.row_template == this.message_row_edit) {
 			this.input = this.$('#message'+this.model.get('id'));
 			this.input.css({width:0});
 		}
@@ -108,7 +109,7 @@ var MessageRowView = Backbone.View.extend({
 	edit: function(e) {
 		e.preventDefault();
 		this.editting = true;
-		this.template = this.template_edit;
+		this.row_template = this.message_row_edit;
 		this.render();
 		this.input.animate({
 				width : 626
@@ -125,7 +126,7 @@ var MessageRowView = Backbone.View.extend({
 		if (e && e.type == 'submit') {
 			e.preventDefault();
 		}
-		this.template = this.template_default;
+		this.row_template = this.message_row_default;
 		
 		// if the message is different than before
 		if (this.model.get('message') !== this.input.val()) {
@@ -150,9 +151,7 @@ var MessageRowView = Backbone.View.extend({
 		this.editting = false;
 		var view = this;
 		this.input.animate({width : 0}, 350, function(){
-			console.log('DONE animating');
 			view.render();
-			console.log('rendered');
 			// remove the message if the text is empty, but only after animation has finished
 			if (view.model.get('message') === '') {
 				view.byebye();
