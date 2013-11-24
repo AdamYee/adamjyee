@@ -40,17 +40,6 @@ var MessageRowView = Backbone.View.extend({
 	tagName: 'div', // generates a new <div> 
 
 	className: 'message-row',
-
-	message_row_default: ['<div class="edit-container"><button type="button" class="edit-btn btn btn-small btn-primary">edit</button></div>',
-						'<div><%= message %><a href="" class="delete">[x]</a></div>',
-						'<hr />'
-						].join(''),
-
-	message_row_edit: ['<form class="edit-form">',
-					'<input class="edit" id="message<%= id %>" type="text" value="<%= message %>" />',
-					'<hr style="margin-top:5px;"/>',
-					'</form>',
-					].join(''),
 					
 	events: {
 		'click a.delete'	: 'byebye',
@@ -62,16 +51,16 @@ var MessageRowView = Backbone.View.extend({
 	initialize: function() {
 		console.log('MessageView initialized');
 		console.log(Handlebars.templates);
-		this.row_template = this.message_row_default;
+		this.template = Handlebars.templates['message-row-default'];
 		this.editting = false;
 		
 		this.model.on('change:message', this.afterEditRender, this);
 	},
 			
 	render: function() {
-		var t = _.template(this.row_template);
-		this.$el.html( t(this.model.toJSON()) );
-		if (this.row_template == this.message_row_edit) {
+		var t = this.template(this.model.toJSON());
+		this.$el.html( t );
+		if (this.template === Handlebars.templates['message-row-edit']) {
 			this.input = this.$('#message'+this.model.get('id'));
 			this.input.css({width:0});
 		}
@@ -109,7 +98,7 @@ var MessageRowView = Backbone.View.extend({
 	edit: function(e) {
 		e.preventDefault();
 		this.editting = true;
-		this.row_template = this.message_row_edit;
+		this.template = Handlebars.templates['message-row-edit'];
 		this.render();
 		this.input.animate({
 				width : 626
@@ -126,7 +115,7 @@ var MessageRowView = Backbone.View.extend({
 		if (e && e.type == 'submit') {
 			e.preventDefault();
 		}
-		this.row_template = this.message_row_default;
+		this.template = Handlebars.templates['message-row-default'];
 		
 		// if the message is different than before
 		if (this.model.get('message') !== this.input.val()) {

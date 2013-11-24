@@ -23,6 +23,7 @@ module.exports = function(grunt) {
         },
         files: {
           "static/js/homepage/handlebars/message-row-default.js": "static/templates/homepage/handlebars/html/message-row-default.html",
+          "static/js/homepage/handlebars/message-row-edit.js": "static/templates/homepage/handlebars/html/message-row-edit.html",
         }
       }
     }
