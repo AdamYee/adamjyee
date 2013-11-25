@@ -54,8 +54,8 @@
 			<input id="submit" type="submit" value="submit" />
 		</form>
 		<div id="notification">
-			<span id="notify-text" style=""></span>
-			<button id="close" type="button" class="close" style="">×</button>
+			<span id="notify-text"></span>
+			<button id="close" type="button" class="close">×</button>
 		</div>
 		<hr />
 		<div id="message-list"></div>
@@ -71,15 +71,12 @@
 	<script data-main="{{ STATIC_URL }}js/homepage/message-app/message-app.js" src="{{ STATIC_URL }}js/notmine/require.js"></script>
 	
 	<script type="text/javascript">
-	require([
-		'test',
-		'app'
-	], function (test, app) {
-		$(function(){
-			console.log(test);
-			console.log(app);
+	$(function(){
+		require([
+			'app',
+		], function (app) {
+
 			app();
-			var App = new AppView();
 			
 			$('#close').click(function(){
 				$('#notification').slideUp({
