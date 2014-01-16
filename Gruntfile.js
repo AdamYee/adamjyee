@@ -26,11 +26,21 @@ module.exports = function(grunt) {
           "static/js/homepage/handlebars/message-row-edit.js": "static/templates/homepage/handlebars/html/message-row-edit.html",
         }
       }
+    },
+
+    less: {
+      options: {
+        paths: ["static/less"]
+      },
+      files: {
+        "static/css/message-app/app.css": "static/less/message-app/app.less"
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
+  grunt.loadNpmTasks('grunt-contrib-less');
 
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('template', ['handlebars']);
