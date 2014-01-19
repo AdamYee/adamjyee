@@ -9,28 +9,26 @@ $(function() {
 		});
 	};
 	
-	(function submitform(){
-		$('#contact-form').submit(function(e) {
-			e.preventDefault();
-			$.ajax({
-				type : "POST",
-				url : "/contact/",
-				data : $(this).serialize()
-			})
-			.done(function( data ) {
-				$('#contact-modal')
-					.modal('hide')
-					.on('hidden', onHidden);
-				
-				$('#modal-body').load('/contact_modal/', function(){submitform();}); // don't forget to attach submit handler after load
-			})
-			.fail(function(xhr, status, error){
-				var resp = $.parseJSON(xhr.responseText);
-				displayErrors(resp.errors);
-				if ('valid' in resp) highlightValid(resp.valid);
-			});
+	$('#contact-form').submit(function(e) {
+		e.preventDefault();
+		$.ajax({
+			type : "POST",
+			url : "/contact/",
+			data : $(this).serialize()
+		})
+		.done(function( data ) {
+			$('#contact-modal')
+				.modal('hide')
+				.on('hidden', onHidden);
+			
+			$('#modal-body').load('/contact_modal/');
+		})
+		.fail(function(xhr, status, error){
+			var resp = $.parseJSON(xhr.responseText);
+			displayErrors(resp.errors);
+			if ('valid' in resp) highlightValid(resp.valid);
 		});
-	})();
+	});
 	
 	// hide thank you if sending another message 
 	$('#contact-modal').on('shown', function(){
