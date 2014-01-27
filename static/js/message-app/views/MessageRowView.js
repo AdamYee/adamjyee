@@ -1,4 +1,6 @@
-define(function () {
+define(['templates/message-row-default',
+		'templates/message-row-edit'],
+	function (rowDefault, rowEdit) {
 	return Backbone.View.extend({
 		
 		tagName: 'div', // generates a new <div> 

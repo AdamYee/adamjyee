@@ -14,6 +14,7 @@ module.exports = function(grunt) {
       compile: {
         options: {
           namespace: 'Handlebars.templates',
+          amd: true,
           processName: function(filePath) {
             name = filePath.split('/');
             name = name[name.length-1];
@@ -22,8 +23,8 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          "static/js/homepage/handlebars/message-row-default.js": "static/templates/homepage/handlebars/html/message-row-default.html",
-          "static/js/homepage/handlebars/message-row-edit.js": "static/templates/homepage/handlebars/html/message-row-edit.html",
+          "static/js/message-app/templates/message-row-default.js": "static/templates/homepage/handlebars/html/message-row-default.html",
+          "static/js/message-app/templates/message-row-edit.js": "static/templates/homepage/handlebars/html/message-row-edit.html",
         }
       }
     },

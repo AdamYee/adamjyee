@@ -7,5 +7,11 @@ requirejs.config({
     //never includes a ".js" extension since
     //the paths config could be for a directory.
     paths: {
+    	handlebars: '../notmine/handlebars-v1.1.2',
+    },
+    shim: {
+        'handlebars': {
+            exports: 'Handlebars'
+        }
     }
 });
