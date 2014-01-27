@@ -22,10 +22,10 @@ module.exports = function(grunt) {
             return name;
           }
         },
-        files: {
-          "static/js/message-app/templates/message-row-default.js": "static/templates/homepage/handlebars/html/message-row-default.html",
-          "static/js/message-app/templates/message-row-edit.js": "static/templates/homepage/handlebars/html/message-row-edit.html",
-        }
+        expand: true,
+        src: ['static/js/message-app/templates/*.html'],
+        dest: './',
+        ext: '.js'
       }
     },
 
