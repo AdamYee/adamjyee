@@ -1,4 +1,9 @@
 $(function(){
+	var url = document.location.toString();
+	if (url.match('#')) {
+	    $('.nav-tabs a[href=#'+url.split('#')[1]+']').tab('show') ;
+	}
+	
 	$('div.section').hide();
 	$('#show-all').text('show all');
 	$('.togglers').addClass('icon-plus');
