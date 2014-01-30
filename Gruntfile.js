@@ -44,6 +44,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
 
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('template', ['handlebars']);
+  grunt.registerTask('hbs', ['handlebars']);
 
 };
