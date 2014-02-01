@@ -99,3 +99,6 @@ def message(request, pk=None):
             return Response(s.data)
         else:
             return render_to_response('message.html', context_instance=RequestContext(request))   
+
+def messages_angular(request):
+    return render_to_response('messages_angular.html', context_instance=RequestContext(request))

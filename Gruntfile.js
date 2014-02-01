@@ -10,6 +10,7 @@ module.exports = function(grunt) {
       }
     },
 
+    //todo - consolidate to single .js amd template
     handlebars: {
       compile: {
         options: {
