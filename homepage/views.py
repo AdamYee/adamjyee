@@ -102,3 +102,6 @@ def message(request, pk=None):
 
 def messages_angular(request):
     return render_to_response('messages_angular.html', context_instance=RequestContext(request))
+
+def triangles(request):
+    return render_to_response('triangles.html', context_instance=RequestContext(request))
