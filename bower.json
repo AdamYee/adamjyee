@@ -1,0 +1,30 @@
+{
+  "name": "adamjyee",
+  "private": true,
+  "version": "0.0.0",
+  "homepage": "https://github.com/AdamYee/adamjyee",
+  "authors": [
+    "Adam Yee <adamjyee@gmail.com>"
+  ],
+  "description": "packages I'm using and learning",
+  "main": "./static/css/homepage/homepage.css",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "./static/js/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "latest",
+    "jquery": "latest",
+    "backbone-amd": "latest",
+    "underscore-amd": "latest",
+    "bootstrap": "~3.1.0",
+    "json2": "*"
+  },
+  "devDependencies": {
+    "jasmine": "latest"
+  }
+}
