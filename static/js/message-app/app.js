@@ -1,7 +1,11 @@
 define([
+	'backbone',
+	'underscore',
 	'collections/MessageList',
 	'views/AppView'
 ], function (
+	Backbone,
+	_,
 	MessageList,
 	AppView
 ) {
@@ -10,13 +14,13 @@ define([
 		/**
 		 * Initialize the message collection
 		 */
-		var Messages = new MessageList();
+		var messages = new MessageList();
 
 		/**
 		 * Kick off the message app
 		 */
 		var appView = new AppView({
-			'collection': Messages,
+			'collection': messages,
 			'dispatcher': _.clone(Backbone.Events)
 		});
 

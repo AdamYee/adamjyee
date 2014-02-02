@@ -1,4 +1,4 @@
-define(['models/Message'], function (Message) {
+define(['backbone', 'models/Message'], function (Backbone, Message) {
 	return Backbone.Collection.extend({
 		model: Message,
 		url: '/messages/',

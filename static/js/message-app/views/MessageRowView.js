@@ -1,9 +1,13 @@
 define(['templates/message-row-default',
-		'templates/message-row-edit'],
-	function (rowDefault, rowEdit) {
+		'templates/message-row-edit',
+		'backbone'
+		],
+	function (rowDefault, rowEdit, Backbone) {
 	return Backbone.View.extend({
 		
 		tagName: 'div', // generates a new <div> 
+
+		dispatcher: null,
 
 		className: 'message-row',
 						
@@ -18,7 +22,7 @@ define(['templates/message-row-default',
 			console.log('MessageRowView initialized');
 			this.template = Handlebars.templates['message-row-default'];
 			this.editting = false;
-			
+			this.dispatcher = arguments[0].dispatcher;
 			this.model.on('change:message', this.afterEditRender, this);
 		},
 				
@@ -41,7 +45,7 @@ define(['templates/message-row-default',
 		
 		byebye: function(e) {
 			if (e) e.preventDefault();
-			console.log('destroying: ' + this.model.attributes.message);
+			console.log('----------------destroying: ' + this.model.attributes.message);
 
 			var view = this;
 			
@@ -51,11 +55,15 @@ define(['templates/message-row-default',
 	 				view.$el.slideUp('default', function(){
 	 					view.remove();
 	 				});
-	 				console.log('destroyed and removed ----------------');
+	 				console.log('----------------destroyed and removed');
 	 			},
 	 			error: function(model, xhr, options) {
 	 				console.log('error destroying');
 	 				alert(xhr.statusText + ', message not deleted.');
+	 			},
+	 			complete: function () {
+	 				console.log('----------------polling restarted');
+ 					view.dispatcher.trigger('begin:polling');
 	 			}
 	 		});
 		},
@@ -80,39 +88,44 @@ define(['templates/message-row-default',
 			if (e && e.type == 'submit') {
 				e.preventDefault();
 			}
+			this.dispatcher.trigger('stop:polling');
 			this.template = Handlebars.templates['message-row-default'];
-			
-			// if the message is different than before
-			if (this.model.get('message') !== this.input.val()) {
-				// save if the model changed
-				this.model.save({message: this.input.val()}, {
-					success: function() {
-						console.log('successfully edited');
-						console.log('model saved');
-					},
-					error: function() {
-						console.log('error editting message');
-					}
-				});
-				if (this.input.val() === '') {
-					// trigger event to block polling until message has been deleted or modified.
-					// otherwise, the out of sync will cause split second animation glitches
-					this.options.dispatcher.trigger('done-delete');
-				}
-			}
-
 			this.editting = false;
+			
+			var view = this;
+			var updatedText = this.input.val();
+			var textHasChanged = this.model.get('message') !== updatedText;
+
+			// if the message is not empty
+			if (updatedText !== "") {
+				// AND if the message is different than before
+				if (textHasChanged) {
+					this.model.set('message', updatedText);
+					this.model.save({
+						success: function() {
+							console.log('successfully edited');
+							console.log('model saved');
+						},
+						error: function() {
+							console.log('error editting message');
+						}
+					});
+				}
+				view.hideEdit();
+			}
+			else {
+				this.model.set('message', "");
+				view.byebye();
+			}
+		},
+
+		hideEdit: function () {
 			var view = this;
 			this.input.animate({width : 0}, 350, function(){
 				view.render();
-				// remove the message if the text is empty, but only after animation has finished
-				if (view.model.get('message') === '') {
-					view.byebye();
-				}
-				else {
-					// reset width
-					$(this).css('width',''); // this refers to the jquery div selector
-				}
+				// reset width
+				$(this).css('width',''); // this refers to the jquery div selector
+				view.dispatcher.trigger('begin:polling');
 			});
 		}
 	});

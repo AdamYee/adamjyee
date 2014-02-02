@@ -1,10 +1,12 @@
 define([
-	'views/MessageRowView'
+	'views/MessageRowView',
+	'backbone'
 	],
-function (MessageRowView) {
+function (MessageRowView, Backbone) {
 	return Backbone.View.extend({
-		el: $('#message-app'),
+		el: '#message-app',
 		rows: {},
+		dispatcher: null,
 		
 		events: {
 			'click #submit'		: 'saveMessage',
@@ -17,12 +19,16 @@ function (MessageRowView) {
 			this.listenTo(this.collection, 'remove', this.removeMessage);
 
 			this.timer = null;
-			this.pollMessages(this);
 			
-			this.options.dispatcher.on('done-delete', this.resetPoll, this);
+			this.dispatcher = arguments[0].dispatcher;
+			this.dispatcher.on('stop:polling', this.resetPoll, this);
+			this.dispatcher.on('begin:polling', this.pollMessages, this);
+
+			this.dispatcher.trigger('begin:polling');
 		},
 		
-		pollMessages: function(view) {
+		pollMessages: function() {
+			var view = this;
 			// console.log('polled');
 			// console.log(Messages);
 			this.collection.fetch({
@@ -42,13 +48,8 @@ function (MessageRowView) {
 		},
 		
 		resetPoll: function() {
-			// reset polling out 1000ms to ensure the animation and deletion finishes
-			// before fetching messages and firing a change event
-			var view = this;
+			// stop the polling until otherwise notified
 			clearTimeout(this.timer);
-			this.timer = setTimeout(function(){
-				view.pollMessages(view);
-			}, 1000);
 		},
 		
 		render: function() {
@@ -58,7 +59,7 @@ function (MessageRowView) {
 		addMessage: function(msg) {
 			var view = new MessageRowView({
 				'model': msg,
-				'dispatcher': this.options.dispatcher
+				'dispatcher': this.dispatcher
 			});
 			this.$('#message-list').append(view.render().el);
 			view.$el.slideDown('default');
