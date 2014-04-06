@@ -70,3 +70,16 @@ hr {
   border-top-color: #ddd;
 }
 h3 { font-size:18px; }
+
+div.project {
+  color: #666;
+  margin: 8px 0px 8px 0px;
+  font-size: 14px;
+}
+
+ul.project-details {
+  font-size: 13px;
+}
+li {
+  color: #666;
+}
