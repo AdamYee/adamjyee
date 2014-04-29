@@ -37,8 +37,9 @@ html,body {
   float: left;
 }
 .section-toggle {
-  margin-top: 17px;
-  margin-left: 20px;
+  margin-top: 18px;
+  margin-left: 7px;
+  margin-right: 15px;
 }
 .error-field {
   padding-bottom: 5px;
