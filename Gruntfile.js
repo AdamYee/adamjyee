@@ -5,8 +5,21 @@ module.exports = function(grunt) {
 
     watch: {
       handlebars: {
-        files: ['static/templates/homepage/handlebars/html/*.html'],
-        tasks: ['template']
+        files: ['static/js/message-app/templates/*.html'],
+        tasks: ['handlebars'],
+        options: {
+          livereload: true
+        }
+      },
+      less: {
+        files: ['static/less/**/*.less'],
+        tasks: ['less']
+      },
+      static_files: {
+        files: ['static/templates/**/*.html'],
+        options: {
+          livereload: true
+        }
       }
     },
 
