@@ -16,7 +16,7 @@ module.exports = function(grunt) {
         tasks: ['less']
       },
       static_files: {
-        files: ['static/templates/**/*.html'],
+        files: ['static/templates/**/*.html', "static/js/**/*.js", "static/css/**/*.css"],
         options: {
           livereload: true
         }
@@ -47,8 +47,12 @@ module.exports = function(grunt) {
       options: {
         paths: ["static/less"]
       },
-      files: {
-        "static/css/message-app/app.css": "static/less/message-app/app.less"
+      src: {
+        expand: true,
+        cwd: "static/less",
+        src: "*.less",
+        dest: "static/css",
+        ext: ".css"
       }
     }
   });

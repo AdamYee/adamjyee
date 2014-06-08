@@ -105,3 +105,6 @@ def messages_angular(request):
 
 def triangles(request):
     return render_to_response('triangles.html', context_instance=RequestContext(request))
+
+def yelp(request):
+    return render_to_response('yelp.html', context_instance=RequestContext(request))

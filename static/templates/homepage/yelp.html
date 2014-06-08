@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.6">
+	<link href="{{STATIC_URL}}css/yelp-app.css"rel="stylesheet">
+	<title>AY</title>
+	
+</head>
+<body>
+	<h2 id="title"><a href="/#code">Adam Yee</a></h2>
+	<div class="yelp-search">
+		<h3>Simple Yelp search</h3>
+		<label>Search for:<input type="text" name="search_term" value=""></label>
+		<label>in Neighborhood:<input type="text" name="search_neighborhood" value=""></label>
+		<input type="submit" name="submit_search" value="Search">
+		<span id="loading-indicator">loading...</span>
+		<div>
+			<h4>Results</h4>
+			<ul>
+			</ul>
+		</div>
+	</div>
+	<script src="{{ STATIC_URL }}js/bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}js/notmine/csrf.js" type="text/javascript"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/yelp-app/search.js"></script>
+</body>

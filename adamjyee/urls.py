@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^messages/(?P<pk>[0-9]+)/$', 'homepage.views.message', name='one_message'),
     url(r'^messages/angular/$', 'homepage.views.messages_angular'),
     url(r'^triangles/$', 'homepage.views.triangles'),
+    url(r'^yelp/$', 'homepage.views.yelp'),
     url(r'^jasmine/$', 'homepage.views.specrunner', name='specrunner'),
     # Examples:
     # url(r'^adamjyee/', include('adamjyee.foo.urls')),
