@@ -1,8 +1,6 @@
 var getYelpResponse = function(resp) {
 	$("#loading-indicator").hide();
-	var $term = $("input[name=search_term]").prop("disabled",false);
-	var $location = $("input[name=search_neighborhood]").prop("disabled",false);
-	var $submit = $("input[name=submit_search]").prop("disabled",false);
+	var $inputs = $("input").prop("disabled",false);
 	var $ul = $("ul");
 	$.each(resp.businesses, function (i, val) {
 		$ul.append("<li>"+val.name+"</li>");
@@ -25,7 +23,5 @@ $("input[name=submit_search]").click(function () {
 	document.getElementsByTagName("head").item(0).appendChild(s);
 
 	$("#loading-indicator").show();
-	$term.prop("disabled",true);
-	$location.prop("disabled",true);
-	var $submit = $("input[name=submit_search]").prop("disabled",true);
+	$("input").prop("disabled",true);
 });
