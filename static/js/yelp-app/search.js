@@ -12,7 +12,7 @@ $("input[name=submit_search]").click(function () {
 	var $ul = $("ul").empty();
 	var $term = $("input[name=search_term]");
 	var $location = $("input[name=search_neighborhood]");
-	if (!($term.val()+$location.val()))
+	if (!$term.val() || !$location.val())
 		return false;
 
 	var url = "http://api.yelp.com/business_review_search?callback=getYelpResponse";
