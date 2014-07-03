@@ -1,86 +1,131 @@
-/* Sticky footer styles -------------------------------------------------- */
-body {background-attachment:fixed;}
+@media screen {
+  /* Sticky footer styles -------------------------------------------------- */
+  body {background-attachment:fixed;}
 
-html,body {
-  height: 100%;
-  /* The html and body elements cannot have any padding or margin. */
+  html,body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+  }
+
+  /* Wrapper for page content to push down footer */
+  #wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -80px;
+  }
+
+  /* Set the fixed height of the footer here */
+  #push {
+    height: 60px;
+  }
+  #footer {
+    height: 40px;
+  }
+  /* end sticky footer --------------*/
+
+  .section p {
+    padding-left: 10px;
+  }
+  .section-wrap {
+    min-height: 100px;
+  /*   border-top: 0px; */
+    border: 1px solid #ddd; /* ddd or 222 */
+    padding: 10px;
+  }
+  .section-header > * {
+    float: left;
+  }
+  .section-toggle {
+    margin-top: 18px;
+    margin-left: 7px;
+    margin-right: 15px;
+  }
+  .error-field {
+    padding-bottom: 5px;
+    margin-left: 80px;
+    display: none;
+  }
+  .thankyou {
+    display: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: #D7FFFF;
+    border-radius: 5px;
+  }
+  #endnote {
+    text-align: center;
+    margin-top: -1px;
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+  #tabs {
+    margin-bottom: -1px;
+  }
+  #main-content {
+    width: 100%;
+  }
+  hr {
+    margin: 0px;
+    border-top-color: #ddd;
+  }
+  h3 { font-size:18px; }
+
+  div.project {
+    color: #666;
+    margin: 8px 0px 8px 0px;
+    font-size: 14px;
+  }
+
+  ul.project-details {
+    font-size: 13px;
+  }
+  li {
+    color: #666;
+  }
+
+  #print-email {
+    display: none;
+  }
 }
 
-/* Wrapper for page content to push down footer */
-#wrap {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  /* Negative indent footer by it's height */
-  margin: 0 auto -80px;
-}
+@media print {
+  #tabs,
+  #thankyou,
+  #about,
+  #code,
+  #contact,
+  #contact-modal,
+  #show-all,
+  #endnote,
+  .section-toggle {
+    display: none;
+  }
 
-/* Set the fixed height of the footer here */
-#push {
-  height: 60px;
-}
-#footer {
-  height: 40px;
-}
-/* end sticky footer --------------*/
+  #print-email {
+    display: inline-block;
+    font-size: 14px;
+    color: #666;
+    margin-left: 10px;
+  }
 
-.section p {
-  padding-left: 10px;
-}
-.section-wrap {
-  min-height: 100px;
-/*   border-top: 0px; */
-  border: 1px solid #ddd; /* ddd or 222 */
-  padding: 10px;
-}
-.section-header > * {
-  float: left;
-}
-.section-toggle {
-  margin-top: 18px;
-  margin-left: 7px;
-  margin-right: 15px;
-}
-.error-field {
-  padding-bottom: 5px;
-  margin-left: 80px;
-  display: none;
-}
-.thankyou {
-  display: none;
-  margin-bottom: 10px;
-  padding: 10px;
-  text-align: center;
-  background-color: #D7FFFF;
-  border-radius: 5px;
-}
-#endnote {
-  text-align: center;
-  margin-top: -1px;
-  border: 1px solid #ddd;
-  padding: 5px;
-}
-#tabs {
-  margin-bottom: -1px;
-}
-#main-content {
-  width: 100%;
-}
-hr {
-  margin: 0px;
-  border-top-color: #ddd;
-}
-h3 { font-size:18px; }
+  #title > a {
+    color: #080808;
+  }
 
-div.project {
-  color: #666;
-  margin: 8px 0px 8px 0px;
-  font-size: 14px;
-}
-
-ul.project-details {
-  font-size: 13px;
-}
-li {
-  color: #666;
+  * {
+    font-family: Arial;
+  }
+  h3, h4 {
+    color: #080808;
+  }
+  .section {
+    color: #666;
+    font-size: 14px;
+  }
+  .section p {
+    padding-left: 10px;
+  }
 }
