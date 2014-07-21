@@ -8,8 +8,7 @@ var CanvasTest = (function ($) {
 		R1: {x:5, y:5},
 		R2: {x:55, y:55},
 
-		state: 0, // 0:none, 1:R1, 2:R2, 3:both
-		dirty: false
+		state: 0 // 0:none, 1:R1, 2:R2, 3:both
 	};
 	my.init = function () {
 		var self = this;
@@ -93,10 +92,6 @@ var CanvasTest = (function ($) {
 				}
 			}
 		});
-	};
-
-	my.getState = function () {
-		return this.state;
 	};
 
 	return my;
