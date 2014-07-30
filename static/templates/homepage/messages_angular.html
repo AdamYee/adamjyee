@@ -12,5 +12,31 @@
 	<div id="messages">
 		<p>Messages take two...with Angular.js</p>
 	</div>
+	<div id="div2">
+		div2
+	</div>
+	<script src="{{ STATIC_URL }}js/bower_components/jquery/dist/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	// var p = document.querySelector('p');
+	// var div1 = document.querySelector('#messages');
+	// var div2 = document.querySelector('#div2');
+	// var body = document.querySelector('body');
+	// p.addEventListener('click', function(e) {
+	// 	console.log('p', e);
+	// });
+	// div1.addEventListener('click', function(e) {
+	// 	console.log('div1', e);
+	// });
+	// div2.addEventListener('click', function(e) {
+	// 	console.log('div2', e);
+	// });
+	// body.addEventListener('click', function(e) {
+	// 	console.log('body', e);
+	// });
+
+	$('body').on('click', 'p, #message, #div2', function(e) {
+		console.log(e.target);
+	})
+	</script>
 </body>
 </html>

@@ -3,25 +3,59 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=0.6">
-	<link href="{{STATIC_URL}}css/yelp-app.css"rel="stylesheet">
+	<link rel="stylesheet" href="{{STATIC_URL}}js/bower_components/bootstrap/dist/css/bootstrap.css">
+	<link href="{{STATIC_URL}}css/yelp-app.css" rel="stylesheet">
 	<title>AY</title>
 	
 </head>
 <body>
-	<h2 id="title"><a href="/#code">Adam Yee</a></h2>
-	<div class="yelp-search">
-		<h3>Simple Yelp search (API v1.0)</h3>
-		<label>Search for:<input type="text" name="search_term" value=""></label>
-		<label>in Neighborhood:<input type="text" name="search_neighborhood" value=""></label>
-		<input type="submit" name="submit_search" value="Search">
-		<span id="loading-indicator">loading...</span>
-		<div>
-			<h4>Results</h4>
-			<ul>
-			</ul>
+	<div class="header group">
+		<h2><a href="/#code">Adam Yee</a></h2>
+		<div id="title">Simple Yelp search (API v1.0)</div>
+	</div>
+	<div>
+		Each tab implemented with a different library or framework.
+	</div>
+	<ul class="nav nav-tabs" role="tablist">
+		<li><a href="#jquery" role="tab" data-toggle="tab">JQuery</a></li>
+		<li class="active"><a href="#angular" role="tab" data-toggle="tab">AngularJS</a></li>
+	</ul>
+
+	<div class="tab-content">
+		<div class="tab-pane" id="jquery">
+			<form class="form-inline">
+				<div class="form-group">
+					<input type="text" class="form-control" name="search_term" placeholder="search term">
+					<input type="text" class="form-control" name="search_neighborhood" placeholder="neighborhood">
+					<button id="jquery-search" type="submit" class="btn btn-default">Search</button>
+				</div>
+			</form>
+			<div id="jquery-results">
+				<h4>Results</h4><span id="loading-indicator">loading...</span>
+				<ul>
+				</ul>
+			</div>
+		</div>
+
+		<div class="tab-pane active" id="angular" ng-app="Yelp">
+			<div ng-controller="YelpCtrl">
+				<button class="btn btn-default" ng-click="doSearch()">Search for Chinese food in SF</button>
+				<ul>
+					<li ng-repeat="b in yelpResult.businesses">
+						{% verbatim %}
+							{{b.name}}
+						{% endverbatim %}
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
+	
 	<script src="{{ STATIC_URL }}js/bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}js/bower_components/angular/angular.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}js/yelp-app/angular-yelp.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}js/bower_components/angular-resource/angular-resource.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}js/bower_components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
 	<script src="{{ STATIC_URL }}js/notmine/csrf.js" type="text/javascript"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/yelp-app/search.js"></script>
 </body>

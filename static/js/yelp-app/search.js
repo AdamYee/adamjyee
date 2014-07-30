@@ -1,13 +1,14 @@
 var getYelpResponse = function(resp) {
 	$("#loading-indicator").hide();
 	var $inputs = $("input").prop("disabled",false);
-	var $ul = $("ul");
+	var $ul = $("#jquery-results ul");
 	$.each(resp.businesses, function (i, val) {
 		$ul.append("<li>"+val.name+"</li>");
 	});
 };
-$("input[name=submit_search]").click(function () {
-	var $ul = $("ul").empty();
+$("#jquery-search").click(function (e) {
+	e.preventDefault();
+	var $ul = $("#jquery-results ul").empty();
 	var $term = $("input[name=search_term]");
 	var $location = $("input[name=search_neighborhood]");
 	if (!$term.val() || !$location.val())
