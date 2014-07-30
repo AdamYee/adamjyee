@@ -13,6 +13,10 @@ function YelpCtrl($scope, $resource) {
 		}
 	});
 	$scope.doSearch = function() {
-		$scope.yelpResult = $scope.yelp.get();
+		$scope.wait = 'Please wait...';
+		$scope.yelpResult = $scope.yelp.get()
+		$scope.yelpResult.$promise.then(function() {
+			$scope.wait = '';
+		});
 	}
 }
