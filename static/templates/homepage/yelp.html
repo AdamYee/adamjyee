@@ -37,19 +37,19 @@
 			</div>
 		</div>
 
+		{% verbatim %}
 		<div class="tab-pane active" id="angular" ng-app="Yelp">
 			<div ng-controller="YelpCtrl">
 				<button class="btn btn-default" ng-click="doSearch()">Search for Chinese food in SF</button>
-				<span>{% verbatim %}{{wait}}{% endverbatim %}</span>
+				<span>{{wait}}</span>
 				<ul>
 					<li ng-repeat="b in yelpResult.businesses">
-						{% verbatim %}
-							{{b.name}}
-						{% endverbatim %}
+						{{b.name}}
 					</li>
 				</ul>
 			</div>
 		</div>
+		{% endverbatim %}
 	</div>
 	
 	<script src="{{ STATIC_URL }}js/bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
