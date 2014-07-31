@@ -1,10 +1,8 @@
 angular.module('Yelp', ['ngResource']);
 
-function YelpCtrl($scope, $resource) {
+function YelpCtrl($scope, $resource, $timeout) {
 	$scope.yelp = $resource("http://api.yelp.com/:action", {
 		action: 'business_review_search',
-		term: encodeURIComponent('chinese'),
-		location: encodeURIComponent('San Francisco'),
 		ywsid: 'oQcjRFaFtJ6xs4_sxLUHyg',
 		callback: 'JSON_CALLBACK'
 	}, {
@@ -12,11 +10,27 @@ function YelpCtrl($scope, $resource) {
 			method: 'JSONP'
 		}
 	});
-	$scope.doSearch = function() {
+	$scope.doSearch = function($event) {
+		$event.preventDefault();
 		$scope.wait = 'Please wait...';
-		$scope.yelpResult = $scope.yelp.get()
-		$scope.yelpResult.$promise.then(function() {
-			$scope.wait = '';
+		$scope.yelpResult = $scope.yelp.get({
+			term: encodeURIComponent($scope.term),
+			location: encodeURIComponent($scope.location)
 		});
+		$scope.yelpResult.$promise.then(function(result) {
+			reset();
+		});
+	}
+	// $scope.getName = function(i) {
+	// 	return $scope.yelpResult.businesses[i].name;
+	// };
+
+	function reset() {
+		$scope.wait = '';
+		$scope.term = '';
+		$scope.location = '';
+		$timeout(function () {
+			$scope.yelpResult.businesses[0].name = 'foo';
+		}, 1000);
 	}
 }

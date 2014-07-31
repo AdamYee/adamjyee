@@ -24,11 +24,9 @@
 	<div class="tab-content">
 		<div class="tab-pane" id="jquery">
 			<form class="form-inline">
-				<div class="form-group">
-					<input type="text" class="form-control" name="search_term" placeholder="search term">
-					<input type="text" class="form-control" name="search_neighborhood" placeholder="neighborhood">
-					<button id="jquery-search" type="submit" class="btn btn-default">Search</button>
-				</div>
+				<input type="text" class="form-control" name="search_term" placeholder="search term">
+				<input type="text" class="form-control" name="search_neighborhood" placeholder="neighborhood">
+				<button id="jquery-search" type="submit" class="btn btn-default">Search</button>
 			</form>
 			<div id="jquery-results">
 				<h4>Results</h4><span id="loading-indicator">loading...</span>
@@ -40,10 +38,15 @@
 		{% verbatim %}
 		<div class="tab-pane active" id="angular" ng-app="Yelp">
 			<div ng-controller="YelpCtrl">
-				<button class="btn btn-default" ng-click="doSearch()">Search for Chinese food in SF</button>
+				<form class="form-inline">
+					<input type="text" class="form-control" placeholder="search term" ng-model="term">
+					<input type="text" class="form-control" placeholder="neighborhood" ng-model="location">
+					<button class="btn btn-default" ng-click="doSearch($event)">Search</button>
+				</form>
 				<span>{{wait}}</span>
 				<ul>
 					<li ng-repeat="b in yelpResult.businesses">
+						<!-- <span ng-bind="getName($index)"></span> -->
 						{{b.name}}
 					</li>
 				</ul>
