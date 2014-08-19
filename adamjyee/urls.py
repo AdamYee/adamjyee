@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.http.response import HttpResponse
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -14,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^canvas/$', 'homepage.views.canvas'),
     url(r'^yelp/$', 'homepage.views.yelp'),
     url(r'^jasmine/$', 'homepage.views.specrunner', name='specrunner'),
+    url(r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow:", mimetype="text/plain"))
     # Examples:
     # url(r'^adamjyee/', include('adamjyee.foo.urls')),
 
