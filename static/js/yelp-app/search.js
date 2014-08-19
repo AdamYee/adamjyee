@@ -6,23 +6,25 @@ var getYelpResponse = function(resp) {
 		$ul.append("<li>"+val.name+"</li>");
 	});
 };
-$("#jquery-search").click(function (e) {
-	e.preventDefault();
-	var $ul = $("#jquery-results ul").empty();
-	var $term = $("input[name=search_term]");
-	var $location = $("input[name=search_neighborhood]");
-	if (!$term.val() || !$location.val())
-		return false;
+$(function() {
+	$("#jquery-search").click(function (e) {
+		e.preventDefault();
+		var $ul = $("#jquery-results ul").empty();
+		var $term = $("input[name=search_term]");
+		var $location = $("input[name=search_neighborhood]");
+		if (!$term.val() || !$location.val())
+			return false;
 
-	var url = "http://api.yelp.com/business_review_search?callback=getYelpResponse";
-	var q = "&term=" + encodeURIComponent($term.val());
-	q += "&location=" + encodeURIComponent($location.val());
-	q += "&ywsid=oQcjRFaFtJ6xs4_sxLUHyg";
-	var s = document.createElement("script");
-	s.src = url + q;
-	s.type = "text/javascript";
-	document.getElementsByTagName("head").item(0).appendChild(s);
+		var url = "http://api.yelp.com/business_review_search?callback=getYelpResponse";
+		var q = "&term=" + encodeURIComponent($term.val());
+		q += "&location=" + encodeURIComponent($location.val());
+		q += "&ywsid=oQcjRFaFtJ6xs4_sxLUHyg";
+		var s = document.createElement("script");
+		s.src = url + q;
+		s.type = "text/javascript";
+		document.getElementsByTagName("head").item(0).appendChild(s);
 
-	$("#loading-indicator").show();
-	$("input").prop("disabled",true);
+		$("#loading-indicator").show();
+		$("input").prop("disabled",true);
+	});
 });
