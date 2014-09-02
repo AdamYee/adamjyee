@@ -100,8 +100,8 @@ def message(request, pk=None):
         else:
             return render_to_response('message.html', context_instance=RequestContext(request))   
 
-def messages_angular(request):
-    return render_to_response('messages_angular.html', context_instance=RequestContext(request))
+def messages_durandal(request):
+    return render_to_response('messages_durandal.html', context_instance=RequestContext(request))
 
 def canvas(request):
     return render_to_response('canvas.html', context_instance=RequestContext(request))

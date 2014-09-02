@@ -23,7 +23,10 @@
     "bootstrap": "~3.1.0",
     "json2": "*",
     "angular": "latest",
-    "angular-resource": "latest"
+    "angular-resource": "latest",
+    "durandal": "^2.1.0",
+    "knockout": "^3.2.0",
+    "text": "^2.0.12"
   },
   "devDependencies": {
     "jasmine": "latest"
