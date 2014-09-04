@@ -1,5 +1,8 @@
 <div class="messages">
 	<ul data-bind="foreach: messages">
-		<li data-bind="text: message"></li>
+		<li>
+			<span data-bind="text: id"></span>
+			<span data-bind="text: message"></span>
+		</li>
 	</ul>
 </div>

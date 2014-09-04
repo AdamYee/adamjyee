@@ -9,9 +9,7 @@ define(function (require) {
 	$.get('/messages/')
 	.done(function (data) {
 		if (data.length > 0) {
-			_.each(data, function (m) {
-				messages.push(m);
-			});
+			messages(data);
 		}
 	})
 	.fail(function (data) {
