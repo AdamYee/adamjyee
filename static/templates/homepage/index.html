@@ -1,271 +1,269 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Adam Yee - Personal Website</title>
+  <title>Adam Yee - Personal Website</title>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=0.6">
-	<meta name="description" content="My own little web presence. About me, resume and code stuff.">
-	
-	<link
-		href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cosmo/bootstrap.min.css"
-		rel="stylesheet" media="screen">
-	<link
-		href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css"
-		rel="stylesheet">
-	<link href="{{ STATIC_URL }}css/homepage/homepage.css" rel="stylesheet">
-	
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.6">
+  <meta name="description" content="My own little web presence. About me, resume and code stuff.">
+  
+  <link
+    href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cosmo/bootstrap.min.css"
+    rel="stylesheet" media="screen">
+  <link
+    href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css"
+    rel="stylesheet">
+  <link href="{{ STATIC_URL }}css/homepage/homepage.css" rel="stylesheet">
+  
 </head>
 
 <body>
-	<div id="wrap">
-		<div class="fluid-container">
-			<div class="row-fluid">
-				<div class="span1">
-					<div style="position: fixed"></div>
-				</div>
-				<div class="span10">
-	
-					<h1 style="margin-bottom:15px;" id="title"><a href="/" style="text-decoration: none !important">Adam Yee</a>
-					<span id="print-email">adamjyee@gmail.com</span>
-					</h1>
+  <div id="wrap">
+    <div class="fluid-container">
+      <div class="row-fluid">
+        <div class="span1">
+          <div style="position: fixed"></div>
+        </div>
+        <div class="span10">
+  
+          <h1 style="margin-bottom:15px;" id="title"><a href="/" style="text-decoration: none !important">Adam Yee</a>
+          <span id="print-email">adamjyee@gmail.com</span>
+          </h1>
 
-					<div id="thankyou" class="thankyou">Thank you!<button id="closety" type="button" class="close">×</button></div>
-					
-					<div class="tabbable">
-						<ul class="nav nav-tabs" id="tabs">
-							<li id="about-tab" class="active"><a href="#about" data-toggle="tab">About</a></li>
-							<li id="resume-tab"><a href="#resume" data-toggle="tab">Resume</a></li>
-							<li id="code-tab"><a href="#code" data-toggle="tab">Code</a></li>
-							<li id="contact-tab"><a href="#contact" data-toggle="tab">Contact</a></li>
-						</ul>
-		
-						<div class="tab-content" id="main-content">
-							<div class="tab-pane section-wrap active" id="about">
-								<div class="row-fluid">
-									<div class="span11 content-offset">
-										<h3>Me</h3>
-										<p>
-											Hi, you've reached my personal web page. Here is some info about me.
-										</p>
-										<p>
-											I started out a physics engineer and went back to school for computer science after finding web development as an interest.
-											Back in 2011, I wrote a thesis for a <a href="http://dl.acm.org/citation.cfm?doid=2379436.2379439" target="_blank">project</a> 
-											I completed that creates custom file system interfaces to Hadoop MapReduce.
-										</p>
-										<p>
-											I consider myself to have a breadth of knowledge and a logical approach to problem solving. While talent and depth of knowledge are
-											widely sought after, I believe the ability to apply a fundamentally strong knowledge base in any environment can be equally valuable.
-										</p>
-										<p>
-											The first language I grew fond of is Python and I have some Java experience. As of now I'm honing my web development skills,
-											and I plan on programming for a career.
-										</p>
-										<p>I'm currently working as a front end developer at <a href="https://www.xero.com" target="_blank">Xero</a>.</p>
-										<h3>Interests</h3>
-										<p>For the past year (2013-2014) I've been given the opportunity to cut my teeth on JavaScript. Learning JavaScript, building with it and seeing where it's headed gave self affirmation that I want to be a front end developer (at least for the foreseeable future).</p>
-										<p>I've a little bit of experience with back end development. <a href="http://nodejs.org/">Node.js</a> looks like my channel to return there and maybe someday take on a full stack JavaScript role.</p>
-										<p>Apart from being a husband and father, I like to stay current with the JavaScript community and learn all the things.</p>
-									</div>
-								</div>
-							</div>
-							<div class="tab-pane section-wrap" id="resume">
-								<div class="section-header row-fluid"><button class="btn btn-small btn-primary section-toggle"><i class="togglers"></i></button><h3>Summary of Qualifications</h3><button class="btn btn-primary btn-small" style="float:right;" id="show-all"></button></div>
-								<div class="section">
-									<ul>
-										<li>Comfortable with the whole web development stack.</li>
-										<li>Working knowledge of the Software Development Life Cycle.</li>
-										<li>Experienced with unit test frameworks and some automation testing.</li>
-										<li>Able to bring balance between business and technical needs.</li>
-									</ul>
-								</div>
-								
-								<hr>
-								<div class="section-header row-fluid"><button class="btn btn-small btn-primary section-toggle"><i class="togglers"></i></button><h3>Technical Skills</h3></div>
-								<div class="section">
-									<h4>Most Currently Used</h4>
-									<p>JavaScript, Knockout.js, Durandal.js, jQuery (including widgets), HTML, CSS/Less/Sass, Jasmine, Mocha+Sinon+Chai, TDD/BDD, Gulp, Grunt, Scrum</p>
-								
-									<h4>Staple skills</h4>
-									<p>JavaScript, Python, Linux, Unit Testing, Backbone.js, Handlebars</p>
+          <div class="tabbable">
+            <ul class="nav nav-tabs" id="tabs">
+              <li id="about-tab" class="active"><a href="#about" data-toggle="tab">About</a></li>
+              <li id="resume-tab"><a href="#resume" data-toggle="tab">Resume</a></li>
+              <li id="code-tab"><a href="#code" data-toggle="tab">Code</a></li>
+              <li id="contact-tab"><a href="#contact" data-toggle="tab">Contact</a></li>
+            </ul>
+    
+            <div class="tab-content" id="main-content">
+              <div class="tab-pane section-wrap active" id="about">
+                <div class="row-fluid">
+                  <div class="span11 content-offset">
+                    <h3>Me</h3>
+                    <p>
+                      Hi, you've reached my personal web page. Here is some info about me.
+                    </p>
+                    <p>
+                      I started out a physics engineer and went back to school for computer science after finding web development as an interest.
+                      Back in 2011, I wrote a thesis for a <a href="http://dl.acm.org/citation.cfm?doid=2379436.2379439" target="_blank">project</a> 
+                      I completed that creates custom file system interfaces to Hadoop MapReduce.
+                    </p>
+                    <p>
+                      I consider myself to have a breadth of knowledge and a logical approach to problem solving. While talent and depth of knowledge are
+                      widely sought after, I believe the ability to apply a fundamentally strong knowledge base in any environment can be equally valuable.
+                    </p>
+                    <p>
+                      The first language I grew fond of is Python. As of now I'm honing my web development skills,
+                      and I plan on programming for a career.
+                    </p>
+                    <p>I'm currently working as a front end developer at <a href="https://www.xero.com" target="_blank">Xero</a>.</p>
+                    <h3>Interests</h3>
+                    <p>For the past year (2013-2014) I've been given the opportunity to cut my teeth on JavaScript. Learning JavaScript, building with it and seeing where it's headed gave self affirmation that I want to be a front end developer (at least for the foreseeable future).</p>
+                    <p>I've a little bit of experience with back end development. <a href="http://nodejs.org/">Node.js</a> looks like my channel to return there and maybe someday take on a full stack JavaScript role.</p>
+                    <p>Apart from being a husband and father, I like to stay current with the JavaScript community and learn all the things.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane section-wrap" id="resume">
+                <div class="section-header row-fluid"><button class="btn btn-small btn-primary section-toggle"><i class="togglers"></i></button><h3>Summary of Qualifications</h3><button class="btn btn-primary btn-small" style="float:right;" id="show-all"></button></div>
+                <div class="section">
+                  <ul>
+                    <li>Comfortable with the whole web development stack.</li>
+                    <li>Working knowledge of the Software Development Life Cycle.</li>
+                    <li>Experienced with unit test frameworks and some automation testing.</li>
+                    <li>Able to bring balance between business and technical needs.</li>
+                  </ul>
+                </div>
+                
+                <hr>
+                <div class="section-header row-fluid"><button class="btn btn-small btn-primary section-toggle"><i class="togglers"></i></button><h3>Technical Skills</h3></div>
+                <div class="section">
+                  <h4>Most Currently Used</h4>
+                  <p>JavaScript, Git, Knockout.js, Durandal.js, jQuery, HTML, CSS/Less/Sass, Jasmine, Mocha+Sinon+Chai, Grunt, Scrum</p>
+                
+                  <h4>Staple skills</h4>
+                  <p>JavaScript, Python, Linux, Unit Testing</p>
 
-									<h4>Currently Learning</h4>
-									<p>Git, Knockout, Durandal, Polymer</p>
-			
-									<h4>Archived knowledge</h4>
-									<p>Apache, Ant, C/C++, Django, Hadoop, Jenkins, Machine Learning, Network Programming, Visual Force, Apex, SQL</p>
-								</div>
-								
-								<hr>
-								<div class="section-header row-fluid"><button class="btn btn-small btn-primary section-toggle"><i class="togglers"></i></button><h3>Professional Experience</h3></div>
-								<div class="section">
-									<h4><a href="https://www.xero.com" target="_blank">Xero</a> | Front End Developer | August '14 to present</h4>
-									<div class="project">
-										US Payroll Team
-										<ul class="project-details">
-											<li>Front end stack includes: Knockout, JQuery, Durandal, Require, Polymer and Sass.</li>
-										</ul>
-									</div>
+                  <h4>Currently Learning</h4>
+                  <p>Polymer</p>
+      
+                  <h4>Archived knowledge</h4>
+                  <p>Apache, Ant, Backbone.js, C/C++, Django, Gulp, Hadoop, Handlebars, Jenkins, Machine Learning, Network Programming, SQL</p>
+                </div>
+                
+                <hr>
+                <div class="section-header row-fluid"><button class="btn btn-small btn-primary section-toggle"><i class="togglers"></i></button><h3>Professional Experience</h3></div>
+                <div class="section">
+                  <h4><a href="https://www.xero.com" target="_blank">Xero</a> | Front End Developer | August '14 to present</h4>
+                  <div class="project">
+                    US Payroll Team
+                    <ul class="project-details">
+                      <li>Front end stack includes: Knockout, JQuery, Durandal, Require, Polymer and Sass.</li>
+                    </ul>
+                  </div>
 
-									<h4>Autodesk | Front End Web Developer | August '13 to August '14</h4>
-									<div class="project">
-										Customer Portal - <a href="https://manage.autodesk.com" target="_blank">manage.autodesk.com</a> (Aug. 2013 - present)
-										<ul class="project-details">
-											<li>Scrum/Agile development.</li>
-											<li>Help build and maintain  with backbone.js, jQuery, handlebars, requirejs, bootstrap and less.</li>
-											<li>Apply previous unit test experience to bring JavaScript unit testing to a testless frontend code base by using Jasmine and Sinon.</li>
-											<li>Setup automated test runners with Grunt for continuous integration.</li>
-											<li>Collaborate with UI developers to implement good design patterns such as event-based architecture and dependency injection.</li>
-											<li>Coordinate with backend developers to design and establish new REST APIs.</li>
-											<li>Troubleshoot production bugs with quick turn arounds for bug fix deployments.</li>
-										</ul>
-									</div>
-									<div class="project">
-										Desktop Application In Product Purchase (Feb. 2014 - present)<br>
-										Similar to Adobe products' try to buy, in a seamless experience the customer will be able 
-										to purchase a yearly/monthly subscription while within the product and immediately see the benefits of their purchase.
-										<ul class="project-details">
-											<li>Built from the ground up using backbone, require, handelbars, jQuery, jQuery-ui and less.</li>
-											<li>Project scaffolding with Grunt and Bower.
-											<li>Webkit.
-											<li>UI project lead.
-										</ul>
-									</div>
-									
-									<h4>Tahebo - Agate Force | Salesforce Developer | April ’12 to July '12</h4>
-									Part of a team that developed custom Salesforce.com solutions for end-clients.
-									<ul class="project-details">
-										<li>Wrote Apex Classes, Custom Controllers, Extension
-											Controllers and Apex Triggers
-										<li>Developed Custom Objects, Tabs, validation
-											rules, formula fields.
-										<li>Designed and developed user interfaces with Visual Force, jQuery
-											and Bootstrap.
-										<li>Worked with Salesforce.com Standard objects.
-										<li>Customized salesforce.com Reports and Dashboards
-									</ul>
-			
-									<h4>Performance Technology Partners | Java Developer | contract April '12 - April '13</h4>
-									Developed Interactive Voice Response (IVR) applications. Support
-									internal frameworks and documentation. Unit testing and
-									application test suites.
-									<ul class="project-details">
-										<li>Ported an existing IVR application (Intervoice) to a custom Java
-											application and Genesys Voice Platform.</li>
-										<li>Helped develop an interanl MVC framework used to develop client applications.</li>
-										<li>Designed and executed a Test Plan, Worked with client
-											through UAT and met targeted deadlines for successful
-											application launch.</li>
-									</ul>
-								</div>
-								
-								<hr>
-								<div class="section-header row-fluid"><button class="btn btn-small btn-primary section-toggle"><i class="togglers"></i></button><h3>Other Related Experience</h3></div>
-								<div class="section">
-									<h4>Graduate School | 2010 - 2011</h4>
-									<p>Thesis - designed and implemented the Hadoop FileSystem Agnostic API
-									(HFAA). It allows Hadoop’s MapReduce engine to interface with any
-									file system over TCP sockets and simplifies integration. Tested
-									and performed proof of concept with OrangeFS (PVFS). <br />
-									ACM Workshop paper - <a href="http://dl.acm.org/citation.cfm?doid=2379436.2379439" target="_blank">HFAA: a generic socket API for Hadoop file systems</a>
-									</p>
-		
-									<p>
-										Sensor Networks - Lead and facilitated a team of seven people to build a three 
-										node Ethernet sensor network that collected vibration data using 
-										microcontrollers and accelerometers. Captured sensor data with Python scripts 
-										(via TCP sockets) and saved to a MySQL database. Served data analysis via a web 
-										server using Apache, Python, mod_wsgi and Django.
-									</p>
-								</div>
-								
-								<hr>
-								<div class="section-header row-fluid"><button class="btn btn-small btn-primary section-toggle"><i class="togglers"></i></button><h3>Education</h3></div>
-								<div class="section">
-									<p class="info">MS - Computer Science, Thesis, University of the Pacific, CA, Aug. 2010 - Dec. 2011</p>
-									<p class="info">BS - Engineering Physics, University of the Pacific, CA,2002-2007</p>
-								</div>
-		
-							</div>
-							
-							<div class="tab-pane section-wrap" id="code">
-								<div class="row-fluid">
-									<div class="span11 content-offset" style="padding-top:20px;">
-										<ul>
-											<li>
-												<a href="/messages/">Messages</a> <span>created August 2013</span><br />
-												<p>This is an ongoing test bed for learning and experimenting with backbone.js. 
-												A simple message page that dynamically adds and displays messages.</p>
-												<p>Messages managed through a RESTful API built with Django and the Django REST Framework.</p>
-												<p>Open multiple browsers to observe adding, removing and editting messages on the fly.</p>
-											</li>
+                  <h4>Autodesk | Front End Web Developer | August '13 to August '14</h4>
+                  <div class="project">
+                    Customer Portal - <a href="https://manage.autodesk.com" target="_blank">manage.autodesk.com</a> (Aug. 2013 - present)
+                    <ul class="project-details">
+                      <li>Scrum/Agile development.</li>
+                      <li>Help build and maintain  with backbone.js, jQuery, handlebars, requirejs, bootstrap and less.</li>
+                      <li>Apply previous unit test experience to bring JavaScript unit testing to a testless frontend code base by using Jasmine and Sinon.</li>
+                      <li>Setup automated test runners with Grunt for continuous integration.</li>
+                      <li>Collaborate with UI developers to implement good design patterns such as event-based architecture and dependency injection.</li>
+                      <li>Coordinate with backend developers to design and establish new REST APIs.</li>
+                      <li>Troubleshoot production bugs with quick turn arounds for bug fix deployments.</li>
+                    </ul>
+                  </div>
+                  <div class="project">
+                    Desktop Application In Product Purchase (Feb. 2014 - present)<br>
+                    Similar to Adobe products' try to buy, in a seamless experience the customer will be able 
+                    to purchase a yearly/monthly subscription while within the product and immediately see the benefits of their purchase.
+                    <ul class="project-details">
+                      <li>Built from the ground up using backbone, require, handelbars, jQuery, jQuery-ui and less.</li>
+                      <li>Project scaffolding with Grunt and Bower.
+                      <li>Webkit.
+                      <li>UI project lead.
+                    </ul>
+                  </div>
+                  
+                  <h4>Tahebo - Agate Force | Salesforce Developer | April ’12 to July '12</h4>
+                  Part of a team that developed custom Salesforce.com solutions for end-clients.
+                  <ul class="project-details">
+                    <li>Wrote Apex Classes, Custom Controllers, Extension
+                      Controllers and Apex Triggers
+                    <li>Developed Custom Objects, Tabs, validation
+                      rules, formula fields.
+                    <li>Designed and developed user interfaces with Visual Force, jQuery
+                      and Bootstrap.
+                    <li>Worked with Salesforce.com Standard objects.
+                    <li>Customized salesforce.com Reports and Dashboards
+                  </ul>
+      
+                  <h4>Performance Technology Partners | Java Developer | contract April '12 - April '13</h4>
+                  Developed Interactive Voice Response (IVR) applications. Support
+                  internal frameworks and documentation. Unit testing and
+                  application test suites.
+                  <ul class="project-details">
+                    <li>Ported an existing IVR application (Intervoice) to a custom Java
+                      application and Genesys Voice Platform.</li>
+                    <li>Helped develop an interanl MVC framework used to develop client applications.</li>
+                    <li>Designed and executed a Test Plan, Worked with client
+                      through UAT and met targeted deadlines for successful
+                      application launch.</li>
+                  </ul>
+                </div>
+                
+                <hr>
+                <div class="section-header row-fluid"><button class="btn btn-small btn-primary section-toggle"><i class="togglers"></i></button><h3>Other Related Experience</h3></div>
+                <div class="section">
+                  <h4>Graduate School | 2010 - 2011</h4>
+                  <p>Thesis - designed and implemented the Hadoop FileSystem Agnostic API
+                  (HFAA). It allows Hadoop’s MapReduce engine to interface with any
+                  file system over TCP sockets and simplifies integration. Tested
+                  and performed proof of concept with OrangeFS (PVFS). <br />
+                  ACM Workshop paper - <a href="http://dl.acm.org/citation.cfm?doid=2379436.2379439" target="_blank">HFAA: a generic socket API for Hadoop file systems</a>
+                  </p>
+    
+                  <p>
+                    Sensor Networks - Lead and facilitated a team of seven people to build a three 
+                    node Ethernet sensor network that collected vibration data using 
+                    microcontrollers and accelerometers. Captured sensor data with Python scripts 
+                    (via TCP sockets) and saved to a MySQL database. Served data analysis via a web 
+                    server using Apache, Python, mod_wsgi and Django.
+                  </p>
+                </div>
+                
+                <hr>
+                <div class="section-header row-fluid"><button class="btn btn-small btn-primary section-toggle"><i class="togglers"></i></button><h3>Education</h3></div>
+                <div class="section">
+                  <p class="info">MS - Computer Science, Thesis, University of the Pacific, CA, Aug. 2010 - Dec. 2011</p>
+                  <p class="info">BS - Engineering Physics, University of the Pacific, CA,2002-2007</p>
+                </div>
+    
+              </div>
+              
+              <div class="tab-pane section-wrap" id="code">
+                <div class="row-fluid">
+                  <div class="span11 content-offset" style="padding-top:20px;">
+                    <ul>
+                      <li>
+                        <a href="/messages/">Messages</a> <span>created August 2013</span><br />
+                        <p>This is an ongoing test bed for learning and experimenting with backbone.js. 
+                        A simple message page that dynamically adds and displays messages.</p>
+                        <p>Messages managed through a RESTful API built with Django and the Django REST Framework.</p>
+                        <p>Open multiple browsers to observe adding, removing and editting messages on the fly.</p>
+                      </li>
 
-											<li>
-												<a href="/messages-durandal/">Messages 2</a> <span>created February 2014</span>
-												<p>This is an implementation of Messages in Knockout and Durandal</p>
-											</li>
-											<li>
-												<a href="/canvas/">Playing with <code>&lt;canvas&gt;</code></a> <span>created June 2014</span>
-											</li>
-											<li>
-												<a href="/yelp/">Using a Yelp API v1.0</a> <span>created June 2014</span>
-												<p>A chance to get my feet wet with third party APIs and experiment with various MVC frameworks.</p>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							
-							<div class="tab-pane section-wrap" id="contact">
-								<div class="row-fluid">
-									<div class="span11 content-offset" style="padding-top:20px;">
-										<ul>
-											<li>
-												<a href="http://www.linkedin.com/pub/adam-yee/14/a25/7b0/" target="_blank">Linkedin</a>
-											</li>
-											<li>
-												<a href="https://github.com/AdamYee" target="_blank">GitHub</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							
-							<div id="endnote">Copyright 2014 Adam Yee.</div>
-						</div> <!-- main-content -->
-					</div> <!-- tabbable -->
-				</div> <!-- span8 -->
-	
-				<div class="span1"></div>
-			</div> <!-- fluid container -->		
-			
-			<div id="contact-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					<h3 id="myModalLabel">Contact Me</h3>
-				</div>
-				<form id="contact-form" class="form-horizontal" action="/contact/"  method="post">{% csrf_token %}
-					<div class="modal-body" style="margin-left:-80px;" id="modal-body">
-						{% include 'contact_modal.html' %}
-					</div>
-					<div class="modal-footer">
-						<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-						<button class="btn btn-primary" form="contact-form" type="submit">Submit</button>
-					</div>
-				</form>
-			</div> <!-- modal -->
-		</div> <!-- main container -->
-	</div> <!-- wrap -->
+                      <li>
+                        <a href="/messages-durandal/">Messages 2</a> <span>created February 2014</span>
+                        <p>This is an implementation of Messages in Knockout and Durandal</p>
+                      </li>
+                      <li>
+                        <a href="/canvas/">Playing with <code>&lt;canvas&gt;</code></a> <span>created June 2014</span>
+                      </li>
+                      <li>
+                        <a href="/yelp/">Using a Yelp API v1.0</a> <span>created June 2014</span>
+                        <p>A chance to get my feet wet with third party APIs and experiment with various MVC frameworks.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="tab-pane section-wrap" id="contact">
+                <div class="row-fluid">
+                  <div class="span11 content-offset" style="padding-top:20px;">
+                    <ul>
+                      <li>
+                        <a href="http://www.linkedin.com/pub/adam-yee/14/a25/7b0/" target="_blank">Linkedin</a>
+                      </li>
+                      <li>
+                        <a href="https://github.com/AdamYee" target="_blank">GitHub</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div id="endnote">Copyright 2014 Adam Yee.</div>
+            </div> <!-- main-content -->
+          </div> <!-- tabbable -->
+        </div> <!-- span8 -->
+  
+        <div class="span1"></div>
+      </div> <!-- fluid container -->   
+      
+      <div id="contact-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Contact Me</h3>
+        </div>
+        <form id="contact-form" class="form-horizontal" action="/contact/"  method="post">{% csrf_token %}
+          <div class="modal-body" style="margin-left:-80px;" id="modal-body">
+            {% include 'contact_modal.html' %}
+          </div>
+          <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="btn btn-primary" form="contact-form" type="submit">Submit</button>
+          </div>
+        </form>
+      </div> <!-- modal -->
+    </div> <!-- main container -->
+  </div> <!-- wrap -->
 
-	<!--[if lt IE 10]>
-	     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<script src="{{ STATIC_URL }}js/bower_components/jquery/jquery.js" type="text/javascript"></script>
-	<script src="{{ STATIC_URL }}js/bower_components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
-	<script src="{{ STATIC_URL }}js/bower_components/json2/json2.js" type="text/javascript"></script>
-	<script src="{{ STATIC_URL }}js/notmine/csrf.js" type="text/javascript"></script>
-	<script src="{{ STATIC_URL }}js/homepage/resume.js" type="text/javascript"></script>
-	<script src="{{ STATIC_URL }}js/homepage/contact.js" type="text/javascript"></script>
+  <!--[if lt IE 10]>
+       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="{{ STATIC_URL }}js/bower_components/jquery/jquery.js" type="text/javascript"></script>
+  <script src="{{ STATIC_URL }}js/bower_components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
+  <script src="{{ STATIC_URL }}js/bower_components/json2/json2.js" type="text/javascript"></script>
+  <script src="{{ STATIC_URL }}js/notmine/csrf.js" type="text/javascript"></script>
+  <script src="{{ STATIC_URL }}js/homepage/resume.js" type="text/javascript"></script>
+  <script src="{{ STATIC_URL }}js/homepage/contact.js" type="text/javascript"></script>
 
 </body>
 
