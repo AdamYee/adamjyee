@@ -2,3 +2,4 @@
 node_modules/*
 static/js/bower_components/*
 adamjyee/settings.py
+npm-debug.log
