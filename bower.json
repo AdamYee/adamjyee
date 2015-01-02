@@ -26,7 +26,8 @@
     "angular-resource": "latest",
     "durandal": "^2.1.0",
     "knockout": "^3.2.0",
-    "text": "^2.0.12"
+    "text": "^2.0.12",
+    "polymer": "Polymer/polymer#~0.5.2"
   },
   "devDependencies": {
     "jasmine": "latest"
